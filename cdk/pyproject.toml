@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "windows-ec2-cdk"
+version = "0.1.0"
+description = "This is a simple project showing how to create a Windows EC2 machine, with ready to connect RDP. Project is a complete solution which after deployment provides for us preconfigured .rdp file to connect to our EC2. It also extracts Admin password from EC2 so it can be used to login to the machine. Main goal for this project was a possibility to not use AWS console in any phase and deploy everything from the code."
+authors = ["amswiatkowski <adam.swiatkowski@iodi.pl>"]
+packages = [{ include = "windows_ec2" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+# 3rdparties
+aws-cdk-lib = ">=2.0.0"
+constructs = ">=10.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
