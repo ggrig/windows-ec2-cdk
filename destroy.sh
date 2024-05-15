@@ -25,4 +25,6 @@ if [ -z "$DEPLOY_ENV" ]; then
 fi
 echo "Region: $REGION"
 echo "Environment: $DEPLOY_ENV"
+# Clean old keys if they do exist
+./utils/clean_old_key_pairs_for_ec2.py
 AWS_REGION=$REGION AWS_DEFAULT_REGION=$REGION DEPLOY_ENV=$DEPLOY_ENV cdk destroy --all --verbose

@@ -252,3 +252,5 @@ node_modules/
 .ruff_cache
 .idea
 cdk.context.json
+client_ec2_connection.rdp
+client_ec2_key.pem

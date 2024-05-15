@@ -31,6 +31,7 @@ GitPython = "*"
 yapf = "*"
 pylint = "*"
 isort = "*"
+rsa = "*"
 
 [build-system]
 requires = ["poetry-core"]

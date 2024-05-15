@@ -2,8 +2,8 @@
 from logging import Logger
 
 import boto3
-from windows_ec2.app import get_stack_name
 from mypy_boto3_cloudformation import CloudFormationClient
+from windows_ec2.utils.utils import get_stack_name
 
 logger: Logger = Logger(name='cfn_reader')
 

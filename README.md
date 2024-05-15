@@ -25,7 +25,7 @@ This is a simple project showing how to create a Windows EC2 machine, with ready
    ```sh
    ./deploy.sh
    ```
-4. Open created .rdp file and connect to the EC2. Use the password from the console's output.
+4. Open created `client_ec2_connection.rdp` file and connect to the EC2. Use the password from the console's output.
 
 
 ## Useful commands
