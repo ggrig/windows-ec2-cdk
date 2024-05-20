@@ -15,7 +15,7 @@ This is a simple project showing how to create a Windows EC2 machine, with ready
 ## Quick start
 1. Clone the repo
    ```sh
-   git clone https://github.com/amswiatkowski/testing-lambda-functions.git
+   git clone git@github.com:amswiatkowski/windows-ec2-cdk.git
    ```
 2. Install dependencies
     ```sh
