@@ -44,6 +44,6 @@ This is a simple project showing how to create a Windows EC2 machine, with ready
 * [Blog](https://cloudybarz.com/)
 
 ### License
-Copyright © 2024, [Adam Świątkowski](https://github.com/sz3jdii).
+Copyright © 2024, [Adam Świątkowski](https://github.com/amswiatkowski).
 Released under the [MIT License](LICENSE).
 
