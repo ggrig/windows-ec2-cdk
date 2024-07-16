@@ -24,6 +24,6 @@ def get_stack_name() -> str:
     repo = Repo(Path.cwd())
     username = get_username()
     try:
-        return f'{username}{SERVICE_NAME}{repo.active_branch}'
-    except TypeError:
         return f'{username}{SERVICE_NAME}'
+    except TypeError:
+        return f'{SERVICE_NAME}'

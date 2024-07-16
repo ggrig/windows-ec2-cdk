@@ -51,10 +51,10 @@ class WindowsEC2Construct(Construct):
 
         self.instance = ec2.Instance(
             self,
-            "ClientEC2",
-            instance_name='ClientEC2',
-            instance_type=ec2.InstanceType.of(ec2.InstanceClass.T3,
-                                              ec2.InstanceSize.MEDIUM),
+            "WindowsEC2Large",
+            instance_name='WindowsEC2Large',
+            instance_type=ec2.InstanceType.of(ec2.InstanceClass.X2IEDN,
+                                              ec2.InstanceSize.XLARGE32),
             machine_image=ec2.MachineImage.latest_windows(
                 version=ec2.WindowsVersion.
                 WINDOWS_SERVER_2022_ENGLISH_FULL_BASE),
@@ -63,15 +63,15 @@ class WindowsEC2Construct(Construct):
             role=self.role,
             associate_public_ip_address=True,
             key_name=EC2_KEY_NAME)
-        CfnOutput(self, id='ClientEC2_ID',
+        CfnOutput(self, id='WindowsEC2Large_ID',
                   value=self.instance.instance_id).override_logical_id('EC2ID')
         CfnOutput(self,
-                  id='ClientEC2_IP',
+                  id='WindowsEC2Large_IP',
                   value=self.instance.instance_public_ip).override_logical_id(
                       'EC2IP')
-        CfnOutput(self, id='ClientEC2_PORT',
+        CfnOutput(self, id='WindowsEC2Large_PORT',
                   value=str(self._RDP_PORT)).override_logical_id('EC2PORT')
-        CfnOutput(self, id='ClientEC2_USERNAME',
+        CfnOutput(self, id='WindowsEC2Large_USERNAME',
                   value='Administrator').override_logical_id('EC2USERNAME')
 
     def _generate_key_pair(self) -> None:
