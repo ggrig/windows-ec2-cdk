@@ -4,12 +4,12 @@ import os
 from aws_cdk import App, Environment
 from boto3 import client, session
 from windows_ec2.utils.utils import get_stack_name
-from windows_ec2.windows_ec2_stack import WindowsEC2Stack
+from windows_ec2.windows_ec2_stack import KnimeVMStack
 
 account = client('sts').get_caller_identity()['Account']
 region = session.Session().region_name
 app = App()
-windows_ec2_stack = WindowsEC2Stack(
+windows_ec2_stack = KnimeVMStack(
     app,
     get_stack_name(),
     description='Complete Windows EC2 Stack',

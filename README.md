@@ -9,7 +9,7 @@ This is a simple project showing how to create a Windows EC2 machine, with ready
  * AWS CLI
  * node.js
  * Python 3.12
- * Poetry
+ * Poetry (installed [manually](https://python-poetry.org/docs/#installing-manually))
  * RDP client
 
 ## Quick start

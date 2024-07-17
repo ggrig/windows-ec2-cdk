@@ -9,7 +9,7 @@ from mypy_boto3_ec2 import EC2Client
 from windows_ec2.constants import EC2_KEY_NAME
 
 
-class WindowsEC2Construct(Construct):
+class KnimeVMConstruct(Construct):
     _RDP_PORT: Final[int] = 3389
 
     def __init__(self, scope: Construct, stack_id: str) -> None:
@@ -51,8 +51,8 @@ class WindowsEC2Construct(Construct):
 
         self.instance = ec2.Instance(
             self,
-            "WindowsEC2Large",
-            instance_name='WindowsEC2Large',
+            "WindowsServer2022Instance",
+            instance_name='WindowsServer2022Instance',
             instance_type=ec2.InstanceType.of(ec2.InstanceClass.X2IEDN,
                                               ec2.InstanceSize.XLARGE32),
             machine_image=ec2.MachineImage.latest_windows(
@@ -63,15 +63,15 @@ class WindowsEC2Construct(Construct):
             role=self.role,
             associate_public_ip_address=True,
             key_name=EC2_KEY_NAME)
-        CfnOutput(self, id='WindowsEC2Large_ID',
+        CfnOutput(self, id='WindowsServer2022Instance_ID',
                   value=self.instance.instance_id).override_logical_id('EC2ID')
         CfnOutput(self,
-                  id='WindowsEC2Large_IP',
+                  id='WindowsServer2022Instance_IP',
                   value=self.instance.instance_public_ip).override_logical_id(
                       'EC2IP')
-        CfnOutput(self, id='WindowsEC2Large_PORT',
+        CfnOutput(self, id='WindowsServer2022Instance_PORT',
                   value=str(self._RDP_PORT)).override_logical_id('EC2PORT')
-        CfnOutput(self, id='WindowsEC2Large_USERNAME',
+        CfnOutput(self, id='WindowsServer2022Instance_USERNAME',
                   value='Administrator').override_logical_id('EC2USERNAME')
 
     def _generate_key_pair(self) -> None:
