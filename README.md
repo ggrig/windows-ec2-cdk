@@ -31,7 +31,7 @@ This is a simple project showing how to create a Windows EC2 machine, with ready
 ## Useful commands
  * `./lint.sh`          Fixes indents and checks your code quality
  * `./destroy.sh --region us-east-1`       Triggers cdk destroy
- * `./deploy/sh --region us-east-1`        Deploys stack to the AWS account
+ * `./deploy.sh --region us-east-1`        Deploys stack to the AWS account
  * `pytest -vv ./tests` Run tests
 
 ## Useful links
